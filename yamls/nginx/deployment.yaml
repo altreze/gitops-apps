@@ -21,7 +21,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: nginx:latest
+      - image: nginx:1.19.2
         name: nginx
         volumeMounts:
         - name: nginx-config
