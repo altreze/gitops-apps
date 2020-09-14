@@ -16,4 +16,4 @@ spec:
   - type: Resource
     resource:
       name: memory
-      targetAverageUtilization: 75
+      targetAverageUtilization: 30
