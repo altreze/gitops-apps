@@ -4,6 +4,7 @@ metadata:
   labels:
     app: nginx
   name: nginx
+  namespace: nginx-test
 spec:
   replicas: 1
   selector:
@@ -24,8 +25,8 @@ spec:
         name: nginx
         resources:
           requests:
-            cpu: 5mi
+            cpu: 5m
             memory: 10Mi
           limits:
-            cpu: 10mi
+            cpu: 10m
             memory: 20Mi
