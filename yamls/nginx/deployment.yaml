@@ -25,7 +25,9 @@ spec:
         name: nginx
         volumeMounts:
         - name: nginx-config
-          mountPath: /etc/nginx
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
+          readOnly: true
         resources:
           requests:
             cpu: 5m
