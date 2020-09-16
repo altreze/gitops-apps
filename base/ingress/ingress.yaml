@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ing
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: dev-nginx.cube.domains
+    external-dns.alpha.kubernetes.io/target: 3.10.204.166
+    external-dns.alpha.kubernetes.io/ttl: "600"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    kubernetes.io/ingress.class: "dev-nginx"
+spec:
+  tls:
+  - hosts:
+    - dev-nginx.cube.domains
+    secretName: dev-nginx-cube-tls
+  rules:
+  - host: dev-nginx.cube.domains
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx
+          servicePort: 80
