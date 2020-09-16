@@ -8,3 +8,10 @@ images:
 - name: nginx
   newName: nginx
   newTag: "1.19.2"
+patchesJson6902:
+- path: patch.yaml
+  target:
+    group: extensions
+    version: v1beta1
+    kind: Ingress
+    name: nginx-ing

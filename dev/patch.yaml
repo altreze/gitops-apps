@@ -1,0 +1,18 @@
+# - op: add
+#   path: /metadata/annotations/external-dns.alpha.kubernetes.io-hostname
+#   value: dev-nginx.cube.domains
+# - op: add
+#   path: /metadata/annotations/external-dns.alpha.kubernetes.io-target
+#   value: 3.10.204.166
+# - op: add
+#   path: /metadata/annotations/external-dns.alpha.kubernetes.io-ttl
+#   value: "600"
+
+- op: add
+  path: /metadata/annotations
+  value:
+    external-dns.alpha.kubernetes.io/hostname: dev-nginx.cube.domains
+    external-dns.alpha.kubernetes.io/target: 3.10.204.166
+    external-dns.alpha.kubernetes.io/ttl: "600"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    kubernetes.io/ingress.class: "nginx"
