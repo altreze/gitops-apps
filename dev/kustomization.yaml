@@ -6,8 +6,8 @@ bases:
 namespace: nginx-dev
 images:
 - name: nginx
-  newName: nginx
-  newTag: "1.19.2"
+  newName: altreze/insurer-api
+  newTag: "0.0.3"
 patchesJson6902:
 - path: patch.yaml
   target:
