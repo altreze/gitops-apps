@@ -20,11 +20,6 @@ spec:
       containers:
       - image: nginx:1.19.2
         name: nginx
-        volumeMounts:
-        - name: nginx-config
-          mountPath: /etc/nginx/nginx.conf
-          subPath: nginx.conf
-          readOnly: true
         resources:
           requests:
             cpu: 5m
@@ -32,10 +27,9 @@ spec:
           limits:
             cpu: 10m
             memory: 20Mi
-      volumes:
-      - name: nginx-config
-        configMap:
-          name: nginx-config
-          items:
-          - key: nginx.conf
-            path: nginx.conf
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+          failureThreshold: 1
+          periodSeconds: 10
