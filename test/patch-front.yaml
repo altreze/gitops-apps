@@ -9,6 +9,9 @@
 #   value: "600"
 
 - op: add
+  path: /metadata/name
+  value: test-front-ing
+- op: add
   path: /metadata/annotations
   value:
     external-dns.alpha.kubernetes.io/hostname: test.cube.domains

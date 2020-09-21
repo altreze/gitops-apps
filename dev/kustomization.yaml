@@ -9,7 +9,7 @@ images:
   newName: altreze/dev-insurer-front
   newTag: "0.0.1"
 patchesJson6902:
-- path: patch.yaml
+- path: patch-front.yaml
   target:
     group: extensions
     version: v1beta1
