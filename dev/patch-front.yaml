@@ -10,7 +10,7 @@
 
 - op: add
   path: /metadata/name
-  value: front-ing
+  value: dev-front-ing
 - op: add
   path: /metadata/annotations
   value:
